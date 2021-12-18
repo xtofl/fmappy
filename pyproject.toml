@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Functor for Python, with a Pythonic UX"
 authors = ["xtofl <kristoffel.pirard@gmail.com>"]
 license = "MIT"
+packages = [
+    {include = "fmappy", from = "src"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
