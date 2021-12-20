@@ -3,6 +3,7 @@
 from fmappy.functor import fmap
 from itertools import chain
 import pytest
+from unittest.mock import MagicMock
 
 
 def twice(x):
@@ -50,3 +51,11 @@ def test_raises_when_functor_type_is_unknown():
 )
 def test_fmap_applies_the_function(data, function, result):
     assert fmap(function, data) == result
+
+
+
+def test_none_is_not_an_optional():
+    """fmap(f, None) has to forward its argument to f"""
+    spy = MagicMock()
+    fmap(spy, None)
+    spy.assert_called_with(None)

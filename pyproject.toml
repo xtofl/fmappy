@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fmappy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Functor for Python, with a Pythonic UX"
 authors = ["xtofl <kristoffel.pirard@gmail.com>"]
 license = "MIT"

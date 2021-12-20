@@ -1,3 +1,4 @@
+
 def fmap(fn, data):
     """Apply fn to all elements in data and construct a new object of the same type.
 
@@ -31,7 +32,7 @@ fmap_apply = lambda fn, data: fn(data)
 fmap_construct_from_mapped = lambda fn, data: type(data)(map(fn, data))
 """Helper: constructs source type with generator  (Works well for some types like tuple and list)"""
 
-register_functor(None, lambda fn, data: None)
+register_functor(type(None), fmap_apply)
 register_functor(int, fmap_apply)
 register_functor(str, fmap_apply)
 register_functor(float, fmap_apply)
