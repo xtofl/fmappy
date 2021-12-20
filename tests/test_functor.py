@@ -30,8 +30,13 @@ def test_fmap_returns_same_type(type_, value):
 @pytest.mark.parametrize(("function", "data", "result"),
 (
     (twice, 1, 2),
+    (twice, "ab", "abab"),
+    (twice, tuple(), tuple()),
     (twice, (1, 2, 3), (2, 4, 6)),
-    (twice, dict(a=1, b=2, c=3), dict(a=2, b=4, c=6))
+    (twice, dict(), dict()),
+    (twice, dict(a=1, b=2, c=3), dict(a=2, b=4, c=6)),
+    (twice, [], []),
+    (twice, [1, 2], [2, 4])
 ))
 def test_fmap_applies_the_function(data, function, result):
     assert fmap(function, data) == result
