@@ -12,6 +12,9 @@ def twice(x):
 SUPPORTED_TYPES = (
     (tuple, (tuple(), (1, 2, 3))),
     (dict, (dict(), dict(one=1, two=2, three=3))),
+    (list, ([], [1, 2, 3])),
+    (int, (1, 2, 3)),
+    (str, ("", "ab", "abc"))
 )
 
 
