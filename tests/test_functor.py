@@ -27,7 +27,11 @@ def test_fmap_returns_same_type(type_, value):
     assert isinstance(fmap(twice, value), type_)
 
 
-def test_fmap_applies_the_function():
-    assert fmap(twice, 1) == 2
-    assert fmap(twice, (1, 2, 3)) == (2, 4, 6)
-    assert fmap(twice, dict(a=1, b=2, c=3)) == dict(a=2, b=4, c=6)
+@pytest.mark.parametrize(("function", "data", "result"),
+(
+    (twice, 1, 2),
+    (twice, (1, 2, 3), (2, 4, 6)),
+    (twice, dict(a=1, b=2, c=3), dict(a=2, b=4, c=6))
+))
+def test_fmap_applies_the_function(data, function, result):
+    assert fmap(function, data) == result
