@@ -27,6 +27,14 @@ def test_fmap_returns_same_type(type_, value):
     assert isinstance(fmap(twice, value), type_)
 
 
+def test_raises_when_functor_type_is_unknown():
+    class X:
+        pass
+    with pytest.raises(TypeError):
+        fmap(twice, X())
+
+
+
 @pytest.mark.parametrize(("function", "data", "result"),
 (
     (twice, 1, 2),
@@ -36,7 +44,7 @@ def test_fmap_returns_same_type(type_, value):
     (twice, dict(), dict()),
     (twice, dict(a=1, b=2, c=3), dict(a=2, b=4, c=6)),
     (twice, [], []),
-    (twice, [1, 2], [2, 4])
+    (twice, [1, 2], [2, 4]),
 ))
 def test_fmap_applies_the_function(data, function, result):
     assert fmap(function, data) == result
