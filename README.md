@@ -1,6 +1,6 @@
 # fmappy
 
-![Python Workflow](https://github.com/xtofl/fmappy/workflows/Python%20Main%20Workflow/badge.svg) [![codecov](https://codecov.io/xtofl/fmappy/branch/master/graph/badge.svg)](https://codecov.io/xtofl/fmappy) [![CodeFactor](https://www.codefactor.io/repository/github/xtofl/fmappy/badge)](https://www.codefactor.io/repository/github/xtofl/fmappy) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Python Workflow](https://github.com/xtofl/fmappy/workflows/Python%20Main%20Workflow/badge.svg) [![codecov](https://codecov.io/gh/xtofl/fmappy/branch/main/graph/badge.svg?token=OI10AO5B02)](https://codecov.io/gh/xtofl/fmappy) [![CodeFactor](https://www.codefactor.io/repository/github/xtofl/fmappy/badge)](https://www.codefactor.io/repository/github/xtofl/fmappy) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Brings the Functionality of the Functor to Python.
 
