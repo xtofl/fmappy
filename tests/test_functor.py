@@ -14,7 +14,7 @@ SUPPORTED_TYPES = (
     (dict, (dict(), dict(one=1, two=2, three=3))),
     (list, ([], [1, 2, 3])),
     (int, (1, 2, 3)),
-    (str, ("", "ab", "abc"))
+    (str, ("", "ab", "abc")),
 )
 
 
@@ -30,21 +30,23 @@ def test_fmap_returns_same_type(type_, value):
 def test_raises_when_functor_type_is_unknown():
     class X:
         pass
+
     with pytest.raises(TypeError):
         fmap(twice, X())
 
 
-
-@pytest.mark.parametrize(("function", "data", "result"),
-(
-    (twice, 1, 2),
-    (twice, "ab", "abab"),
-    (twice, tuple(), tuple()),
-    (twice, (1, 2, 3), (2, 4, 6)),
-    (twice, dict(), dict()),
-    (twice, dict(a=1, b=2, c=3), dict(a=2, b=4, c=6)),
-    (twice, [], []),
-    (twice, [1, 2], [2, 4]),
-))
+@pytest.mark.parametrize(
+    ("function", "data", "result"),
+    (
+        (twice, 1, 2),
+        (twice, "ab", "abab"),
+        (twice, tuple(), tuple()),
+        (twice, (1, 2, 3), (2, 4, 6)),
+        (twice, dict(), dict()),
+        (twice, dict(a=1, b=2, c=3), dict(a=2, b=4, c=6)),
+        (twice, [], []),
+        (twice, [1, 2], [2, 4]),
+    ),
+)
 def test_fmap_applies_the_function(data, function, result):
     assert fmap(function, data) == result
