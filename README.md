@@ -1,5 +1,7 @@
 # fmappy
 
+![Python Workflow](https://github.com/xtofl/fmappy/workflows/Python%20Workflow/badge.svg) [![codecov](https://codecov.io/xtofl/fmappy/branch/master/graph/badge.svg)](https://codecov.io/xtofl/fmappy) [![CodeFactor](https://www.codefactor.io/repository/github/xtofl/fmappy/badge)](https://www.codefactor.io/repository/github/xtofl/fmappy) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Brings the Functionality of the Functor to Python.
 
 ```python
